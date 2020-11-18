@@ -140,6 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="7.cpp" />
+    <ClCompile Include="SLList.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SLList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
