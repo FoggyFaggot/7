@@ -22,5 +22,4 @@ int main()
 	int q;
 	cin >> q;
 	cout << findFromEnd(a, q)->getData() << endl;
-	cout << endl;
 }
