@@ -62,27 +62,22 @@ void printSLList(const SLList* list)
 		s2 = s2->next();
 	}
 }
-bool containsList(list<int>* l, int num)
+bool containsMap(map<int, int>* m, int key)
 {
-	auto iter = l->begin();
-	while (iter != l->end())
-	{
-		if (*iter == num) return true;
-		++iter;
-	}
-	return false;
+	auto a = m->find(key);
+	return a != m->end();
 }
 
-void distinctSLList(SLList* start)
+void distinctSLList(SLList* list)
 {
-	if (start->next() == nullptr) return;
-	list<int> vals;
+	if (list->next() == nullptr) return;
+	map <int, int> vals;
 	SLList* prev = nullptr;
-	SLList* curr = start;
-	SLList* next = start->next();
+	SLList* curr = list;
+	SLList* next = list->next();
 	while (next != nullptr)
 	{
-		if (!containsList(&vals, curr->getData())) vals.emplace_back(curr->getData(), 1);
+		if (!containsMap(&vals, curr->getData())) vals.emplace(curr->getData(), 1);
 		else
 		{
 			prev->replaceNext(next);
@@ -92,7 +87,7 @@ void distinctSLList(SLList* start)
 		curr = next;
 		next = next->next();
 	}
-	if (containsList(&vals, curr->getData())) prev->removeNext();
+	if (containsMap(&vals, curr->getData())) prev->removeNext();
 }
 
 SLList* findFromEnd(SLList* first, int index)
