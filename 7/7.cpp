@@ -21,5 +21,6 @@ int main()
 	cout << "___________" << endl;
 	int q;
 	cin >> q;
-	cout << findFromEnd(a, q)->getData() << endl;	
+	cout << findFromEnd(a, q)->getData() << endl;
+	cout << endl;
 }
