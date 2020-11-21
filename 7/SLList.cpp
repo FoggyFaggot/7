@@ -83,7 +83,7 @@ void distinctSLList(SLList* start)
 	SLList* next = start->next();
 	while (next != nullptr)
 	{
-		if (!containsList(&vals, curr->getData())) vals.emplace_back(curr->getData(), 1);
+		if (!containsList(&vals, curr->getData())) vals.emplace_back(curr->getData());
 		else
 		{
 			prev->replaceNext(next);
